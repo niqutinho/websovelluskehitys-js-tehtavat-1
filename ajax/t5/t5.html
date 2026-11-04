@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX T5 - Restaurant menus</title>
+    <link rel="stylesheet" href="t5.css" />
+    <script src="t5.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <header class="page-header">
+        <p class="eyebrow">AJAX T5</p>
+        <h1>Restaurants in Finland</h1>
+        <p>Select a restaurant to see its details and today’s menu.</p>
+      </header>
+
+      <p id="restaurant-status" class="status" role="status" aria-live="polite">
+        Loading restaurants…
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Restaurant</th>
+              <th scope="col">Address</th>
+              <th scope="col">City</th>
+            </tr>
+          </thead>
+          <tbody id="restaurant-list"></tbody>
+        </table>
+      </div>
+    </main>
+
+    <dialog aria-labelledby="restaurant-title">
+      <div class="dialog-header">
+        <div>
+          <p class="eyebrow">Restaurant details</p>
+          <h2 id="restaurant-title"></h2>
+        </div>
+        <form method="dialog">
+          <button class="close-button" type="submit" aria-label="Close dialog">
+            ×
+          </button>
+        </form>
+      </div>
+
+      <dl id="restaurant-details" class="restaurant-details"></dl>
+      <section class="menu-section" aria-labelledby="menu-title">
+        <h3 id="menu-title">Today’s menu</h3>
+        <p id="menu-status" class="status" role="status" aria-live="polite"></p>
+        <ul id="menu-list" class="menu-list"></ul>
+      </section>
+    </dialog>
+  </body>
+</html>
